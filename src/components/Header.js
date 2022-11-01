@@ -19,8 +19,8 @@ Header.propTypes = {
   email: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  email: state.user.email,
+const mapStateToProps = (state) => ({ // state é o objeto do estado global
+  email: state.user.email, // estrutura -> chave: state.meuReducer.chaveQueEuQuero
 });
 
 export default connect(mapStateToProps)(Header);
