@@ -30,7 +30,7 @@ const thunkGetAPI = async (dispatch) => { // a action vai ser chamada quando a p
     dispatch(getCurrencies()); // o redux-thunk captura a action
     const response = await fetch('https://economia.awesomeapi.com.br/json/all'); // o redux-thunk comunica-se com a API
     const data = Object.keys(await response.json()); // é um objeto de objetos
-    const filteredData = data.filter((currency) => currency !== 'USDT');
+    const filteredData = data.filter((currency) => currency !== 'USDT'); // remove o USDT
     dispatch(getCurrenciesSuccess(filteredData)); // envia a resposta para o reducer
   } catch (error) {
     console.log(error);
