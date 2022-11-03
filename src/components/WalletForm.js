@@ -92,9 +92,9 @@ class WalletForm extends Component {
             value={ method }
             onChange={ this.handleChange }
           >
-            <option id="cash" value="cash">Dinheiro</option>
-            <option id="credit" value="credit">Cartão de crédito</option>
-            <option id="debit" value="debit">Cartão de débito</option>
+            <option id="Dinheiro" value="Dinheiro">Dinheiro</option>
+            <option id="Crédito" value="Cartão de crédito">Cartão de crédito</option>
+            <option id="Débito" value="Cartão de débito">Cartão de débito</option>
           </select>
         </div>
         <div>
@@ -106,11 +106,11 @@ class WalletForm extends Component {
             value={ tag }
             onChange={ this.handleChange }
           >
-            <option id="food" value="food">Alimentação</option>
-            <option id="leisure" value="leisure">Lazer</option>
-            <option id="work" value="work">Trabalho</option>
-            <option id="transport" value="transport">Transporte</option>
-            <option id="health" value="health">Saúde</option>
+            <option id="Alimentação" value="Alimentação">Alimentação</option>
+            <option id="Lazer" value="Lazer">Lazer</option>
+            <option id="Trabalho" value="Trabalho">Trabalho</option>
+            <option id="Transporte" value="Transporte">Transporte</option>
+            <option id="Saúde" value="Saúde">Saúde</option>
           </select>
         </div>
         <br />
@@ -119,7 +119,7 @@ class WalletForm extends Component {
           <button
             data-testid="login-submit-button"
             type="button"
-            name="submit"
+            name="button"
             onClick={ this.handleSubmit }
           >
             Adicionar despesa

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class Header extends Component {
   totalExpenses = () => {
     const { expenses } = this.props;
+    console.log(expenses);
     const values = expenses.map((expense) => {
       const coin = expense.currency;
       const arrayOfCurrencies = Object.values(expense.exchangeRates);
