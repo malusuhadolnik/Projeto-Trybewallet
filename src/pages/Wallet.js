@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import WalletForm from '../components/WalletForm';
+import Table from '../components/Table';
 import { actionThunkGetAPI } from '../redux/actions';
 
 class Wallet extends React.Component {
@@ -18,6 +19,8 @@ class Wallet extends React.Component {
       <div className="wallet-page">
         <Header />
         {isLoading ? 'Loading...' : <WalletForm />}
+        <br />
+        <Table />
       </div>
     );
   }
