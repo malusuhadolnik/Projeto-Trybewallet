@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeAnExpense } from '../redux/actions';
 
-class Table extends Component {
+class Table extends Component { // precisamos identificar o target do clique, para remover apenas ele
+  handleRemove = ({ target }) => {
+    const { dispatch } = this.props;
+    const id = Number(target.name); // dica de OURO do Mateus Ramos (25B)! converter para número!
+    // console.log(`id do target: ${id}`); // funciona OK
+    dispatch(removeAnExpense(id), console.log('fez dispatch do removeAnExpense')); // funciona oK
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -40,6 +48,16 @@ class Table extends Component {
                   <td>{ Number(câmbioUtilizado).toFixed(2) }</td>
                   <td>{ Number(valorCovertido).toFixed(2) }</td>
                   <td>Real</td>
+                  <td>
+                    <button
+                      data-testid="delete-btn"
+                      type="button"
+                      name={ expense.id }
+                      onClick={ this.handleRemove }
+                    >
+                      Remover
+                    </button>
+                  </td>
                 </tr>
               );
             })
@@ -52,6 +70,7 @@ class Table extends Component {
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

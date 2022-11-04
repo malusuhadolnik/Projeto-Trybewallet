@@ -5,6 +5,7 @@ import {
   GET_CURRENCIES,
   GET_CURRENCIES_SUCCESS,
   ADD_AN_EXPENSE,
+  REMOVE_AN_EXPENSE,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -16,7 +17,6 @@ const initialState = {
 
 };
 
-// modelo para editar
 const wallet = (state = initialState, action) => {
   switch (action.type) {
   case GET_EXPENSE_DATA:
@@ -27,6 +27,12 @@ const wallet = (state = initialState, action) => {
 
   case ADD_AN_EXPENSE:
     return { ...state, expenses: [...state.expenses, action.payload] }; // só o payload não funcioa, a nova info é sobrescrita. precisa fazer ...state.expenses
+
+  case REMOVE_AN_EXPENSE: // inspirado no tutorial: https://stackoverflow.com/questions/57519905/how-delete-item-from-redux-state
+    return {
+      ...state,
+      expenses: state.expenses.filter((expense) => expense.id !== action.payload),
+    };
 
   case GET_CURRENCIES:
     return { ...state, isLoading: true };

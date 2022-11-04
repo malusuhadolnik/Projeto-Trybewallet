@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class Header extends Component {
   totalExpenses = () => {
     const { expenses } = this.props;
-    console.log(expenses);
     const values = expenses.map((expense) => {
       const coin = expense.currency;
       const arrayOfCurrencies = Object.values(expense.exchangeRates);
@@ -17,7 +16,8 @@ class Header extends Component {
     });
     console.log(values);
     const sum = values.reduce((accumulator, value) => accumulator + value, 0);
-    return Math.round(sum * 100) / 100;
+    // return Math.round(sum * 100) / 100;
+    return Number(sum).toFixed(2);
   };
 
   render() {

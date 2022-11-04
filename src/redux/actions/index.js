@@ -5,6 +5,7 @@ import {
   GET_CURRENCIES_SUCCESS,
   GET_EXPENSE_DATA_SUCCESS,
   ADD_AN_EXPENSE,
+  REMOVE_AN_EXPENSE,
 } from './actionTypes';
 
 export const saveEmail = (userEmail) => ({ // este argumento é uma array que vem do estado local da aplicação!
@@ -61,6 +62,11 @@ const thunkGetRates = async (dispatch) => { // só chama a API, o resultado ser�
 export const addAnExpense = (expenseData) => ({ // esta sim armazena o resultado da api e do estado local no
   type: ADD_AN_EXPENSE,
   payload: expenseData,
+});
+
+export const removeAnExpense = (id) => ({
+  type: REMOVE_AN_EXPENSE,
+  payload: id,
 });
 
 export const actionThunkGetAPI = () => thunkGetAPI;
