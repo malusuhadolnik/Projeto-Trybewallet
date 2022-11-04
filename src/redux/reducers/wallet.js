@@ -26,7 +26,7 @@ const wallet = (state = initialState, action) => {
     return { ...state };
 
   case ADD_AN_EXPENSE:
-    return { ...state, expenses: [...state.expenses, action.payload] }; // só o payload não funcioa, a nova info é sobrescrita. precisa fazer ...state.expenses
+    return { ...state, expenses: [...state.expenses, action.payload] }; // só o payload não funciona, a nova info é sobrescrita. precisa fazer ...state.expenses
 
   case REMOVE_AN_EXPENSE: // inspirado no tutorial: https://stackoverflow.com/questions/57519905/how-delete-item-from-redux-state
     return {
