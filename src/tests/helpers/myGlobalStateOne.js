@@ -43,7 +43,7 @@ const myGlobalStateOne = {
             bid: '5.0278',
             ask: '5.0289',
             timestamp: '1667587358',
-            create_date: '2022-11-04 15:42:38',
+            create_date: '2022-11-04 15:42:39',
           },
           CAD: {
             code: 'CAD',
@@ -56,7 +56,7 @@ const myGlobalStateOne = {
             bid: '3.7254',
             ask: '3.7266',
             timestamp: '1667587356',
-            create_date: '2022-11-04 15:42:36',
+            create_date: '2022-11-04 15:42:37',
           },
           GBP: {
             code: 'GBP',
@@ -82,7 +82,7 @@ const myGlobalStateOne = {
             bid: '0.0318',
             ask: '0.0318',
             timestamp: '1667587356',
-            create_date: '2022-11-04 15:42:36',
+            create_date: '2022-11-04 15:42:35',
           },
           BTC: {
             code: 'BTC',
@@ -95,7 +95,7 @@ const myGlobalStateOne = {
             bid: '106.122',
             ask: '106.221',
             timestamp: '1667587361',
-            create_date: '2022-11-04 15:42:41',
+            create_date: '2022-11-04 15:42:40',
           },
           LTC: {
             code: 'LTC',
@@ -121,7 +121,7 @@ const myGlobalStateOne = {
             bid: '4.9966',
             ask: '4.9987',
             timestamp: '1667587356',
-            create_date: '2022-11-04 15:42:36',
+            create_date: '2022-11-04 15:42:34',
           },
           JPY: {
             code: 'JPY',
@@ -248,7 +248,7 @@ const myGlobalStateOne = {
             bid: '5.0213',
             ask: '5.0224',
             timestamp: '1667587420',
-            create_date: '2022-11-04 15:43:40',
+            create_date: '2022-11-04 15:43:44',
           },
           CAD: {
             code: 'CAD',
@@ -261,7 +261,7 @@ const myGlobalStateOne = {
             bid: '3.7214',
             ask: '3.7231',
             timestamp: '1667587420',
-            create_date: '2022-11-04 15:43:40',
+            create_date: '2022-11-04 15:43:42',
           },
           GBP: {
             code: 'GBP',
@@ -274,7 +274,7 @@ const myGlobalStateOne = {
             bid: '5.7016',
             ask: '5.7054',
             timestamp: '1667587420',
-            create_date: '2022-11-04 15:43:40',
+            create_date: '2022-11-04 15:43:44',
           },
           ARS: {
             code: 'ARS',
@@ -287,7 +287,7 @@ const myGlobalStateOne = {
             bid: '0.0317',
             ask: '0.0317',
             timestamp: '1667587421',
-            create_date: '2022-11-04 15:43:41',
+            create_date: '2022-11-04 15:43:39',
           },
           BTC: {
             code: 'BTC',
@@ -300,7 +300,7 @@ const myGlobalStateOne = {
             bid: '106.133',
             ask: '106.197',
             timestamp: '1667587421',
-            create_date: '2022-11-04 15:43:41',
+            create_date: '2022-11-04 15:43:39',
           },
           LTC: {
             code: 'LTC',
