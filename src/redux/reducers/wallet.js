@@ -6,6 +6,8 @@ import {
   GET_CURRENCIES_SUCCESS,
   ADD_AN_EXPENSE,
   REMOVE_AN_EXPENSE,
+  ENABLE_EDITION,
+  EDIT_AN_EXPENSE,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -34,11 +36,25 @@ const wallet = (state = initialState, action) => {
       expenses: state.expenses.filter((expense) => expense.id !== action.payload),
     };
 
+  case ENABLE_EDITION:
+    return {
+      ...state,
+      editor: true,
+      idToEdit: action.payload,
+    };
+
   case GET_CURRENCIES:
     return { ...state, isLoading: true };
 
   case GET_CURRENCIES_SUCCESS:
     return { ...state, currencies: action.payload, isLoading: false };
+
+  case EDIT_AN_EXPENSE:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload].sort((a, b) => a.id - b.id),
+      editor: false,
+    };
 
   default:
     return state;

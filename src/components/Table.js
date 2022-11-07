@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeAnExpense } from '../redux/actions';
+import { removeAnExpense, enableEditButton } from '../redux/actions';
 
 class Table extends Component { // precisamos identificar o target do clique, para remover apenas ele
   handleRemove = ({ target }) => {
@@ -9,6 +9,12 @@ class Table extends Component { // precisamos identificar o target do clique, pa
     const id = Number(target.name); // dica de OURO do Mateus Ramos (25B)! converter para número!
     // console.log(`id do target: ${id}`); // funciona OK
     dispatch(removeAnExpense(id), console.log('fez dispatch do removeAnExpense')); // funciona oK
+  };
+
+  enableEdition = ({ target }) => {
+    const { dispatch } = this.props;
+    const id = Number(target.name);
+    dispatch(enableEditButton(id), console.log('fez dispatch do enableEditButton')); // funciona oK
   };
 
   render() {
@@ -56,6 +62,14 @@ class Table extends Component { // precisamos identificar o target do clique, pa
                       onClick={ this.handleRemove }
                     >
                       Remover
+                    </button>
+                    <button
+                      data-testid="edit-btn"
+                      type="button"
+                      name={ expense.id }
+                      onClick={ this.enableEdition }
+                    >
+                      Editar
                     </button>
                   </td>
                 </tr>

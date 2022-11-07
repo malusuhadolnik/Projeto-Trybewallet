@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { actionThunkGetRates, addAnExpense } from '../redux/actions';
+import {
+  actionThunkGetRates,
+  addAnExpense,
+  editAnExpense,
+  removeAnExpense } from '../redux/actions';
 
 class WalletForm extends Component {
   constructor() {
@@ -30,7 +34,6 @@ class WalletForm extends Component {
 
     const currentID = expenses.length;
     const expenseData = { id: currentID, ...this.state, exchangeRates };
-    console.log(expenseData); // OK
     dispatch(addAnExpense(expenseData));
 
     this.setState({
@@ -39,9 +42,17 @@ class WalletForm extends Component {
     });
   };
 
+  handleEdit = () => {
+    const { expenses, idToEdit, dispatch } = this.props;
+    const { exchangeRates } = expenses[0];
+    const editedExpenseData = { id: idToEdit, ...this.state, exchangeRates };
+    dispatch(removeAnExpense(idToEdit), console.log('removeu no handleEdit'));
+    dispatch(editAnExpense(editedExpenseData), console.log('dispatch editExpense'));
+  };
+
   render() {
     const { value, description, currency, method, tag } = this.state;
-    const { currencies } = this.props;
+    const { currencies, editor } = this.props;
     return (
       <form>
         <div>
@@ -115,14 +126,28 @@ class WalletForm extends Component {
         <br />
         <br />
         <div>
-          <button
-            data-testid="login-submit-button"
-            type="button"
-            name="button"
-            onClick={ this.handleSubmit }
-          >
-            Adicionar despesa
-          </button>
+          {
+            editor
+              ? (
+                <button
+                  data-testid="edit-btn"
+                  type="button"
+                  name="edit"
+                  onClick={ this.handleEdit }
+                >
+                  Editar despesa
+                </button>
+              ) : (
+                <button
+                  data-testid="login-submit-button"
+                  type="button"
+                  name="button"
+                  onClick={ this.handleSubmit }
+                >
+                  Adicionar despesa
+                </button>
+              )
+          }
         </div>
       </form>
     );
@@ -133,11 +158,14 @@ WalletForm.propTypes = {
   currencies: PropTypes.arrayOf,
   expenses: PropTypes.arrayOf,
   dispatch: PropTypes.func,
+  editor: PropTypes.bool,
 }.isRequired;
 
 const mapStateToProps = (state) => ({ // state é o objeto do estado global
   currencies: state.wallet.currencies, // estrutura -> chave: state.meuReducer.chaveQueEuQuero
   expenses: state.wallet.expenses,
+  editor: state.wallet.editor,
+  idToEdit: state.wallet.idToEdit,
 });
 
 export default connect(mapStateToProps)(WalletForm);

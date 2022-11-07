@@ -6,6 +6,8 @@ import {
   GET_EXPENSE_DATA_SUCCESS,
   ADD_AN_EXPENSE,
   REMOVE_AN_EXPENSE,
+  ENABLE_EDITION,
+  EDIT_AN_EXPENSE,
 } from './actionTypes';
 
 export const saveEmail = (userEmail) => ({ // este argumento é uma array que vem do estado local da aplicação!
@@ -67,6 +69,16 @@ export const addAnExpense = (expenseData) => ({ // esta sim armazena o resultado
 export const removeAnExpense = (id) => ({
   type: REMOVE_AN_EXPENSE,
   payload: id,
+});
+
+export const enableEditButton = (id) => ({
+  type: ENABLE_EDITION,
+  payload: id,
+});
+
+export const editAnExpense = (editedExpenseData) => ({ // esta sim armazena o resultado da api e do estado local no
+  type: EDIT_AN_EXPENSE,
+  payload: editedExpenseData,
 });
 
 export const actionThunkGetAPI = () => thunkGetAPI;
