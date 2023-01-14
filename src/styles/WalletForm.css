@@ -1,5 +1,5 @@
-.wallet-header {
-  background-color: white;
+.wallet-form {
+  background-color: rgb(238, 233, 233);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -7,10 +7,3 @@
   width: 100%;
 }
 
-.trybewallet-logo {
-  width: 300px;
-}
-
-h2 {
-  padding-top: 30px;
-}

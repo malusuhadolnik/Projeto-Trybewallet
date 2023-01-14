@@ -6,6 +6,7 @@ import {
   addAnExpense,
   editAnExpense,
   removeAnExpense } from '../redux/actions';
+import '../styles/WalletForm.css';
 
 class WalletForm extends Component {
   constructor() {
@@ -54,7 +55,7 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     const { currencies, editor } = this.props;
     return (
-      <form>
+      <form className="wallet-form">
         <div>
           <p>Valor da despesa:</p>
           <input

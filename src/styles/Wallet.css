@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(92, 214, 139);
+  background-image: url('/home/malu/Documentos/trybe-projetos/sd-025-b-project-trybewallet/src/images/foto-fundo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.wallet-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

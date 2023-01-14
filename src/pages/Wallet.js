@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import WalletForm from '../components/WalletForm';
 import Table from '../components/Table';
 import { actionThunkGetAPI } from '../redux/actions';
+import '../styles/Wallet.css';
 
 class Wallet extends React.Component {
   componentDidMount() {
