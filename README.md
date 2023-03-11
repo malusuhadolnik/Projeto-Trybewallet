@@ -10,7 +10,7 @@ Nele, foi desenvolvido uma carteira de controle de gastos com conversor de moeda
 - Visualizar uma tabela com seus registros,
 - Visualizar o total de gastos convertidos para uma moeda de escolha;
 
-Esta aplicação consome os dados da API do awesomeapi API de Cotações para realizar a busca de câmbio de moedas (endpoint:
+Esta aplicação consome os dados da **API do awesomeapi API de Cotações** para realizar a busca de câmbio de moedas (endpoint:
 https://economia.awesomeapi.com.br/json/all).
 
 Também foram desenvolvidos testes unitários/integração usando a biblioteca React Testing Library.
